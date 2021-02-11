@@ -32,7 +32,7 @@ namespace RPDemoApp.Pages.Orders
         {
             await _orderData.DeleteOrder(Id);
 
-            return RedirectToPage("./../Index");
+            return RedirectToPage("./AllOrders");
         }
     }
 }
