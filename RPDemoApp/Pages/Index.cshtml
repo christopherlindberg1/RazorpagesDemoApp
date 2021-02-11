@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    <h1 class="display-4 text-center">Tims Diner</h1>
+    <p class="lead">Welcome to Tims Diner! Below you can see our menu.</p>
+
+    <h2>Menu</h2>
+    <table class="table table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var food in Model.Foods)
+            {
+                <tr>
+                    <td>@food.Title</td>
+                    <td>@food.Description</td>
+                    <td>@String.Format("{0:C}", food.Price)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-page="./Orders/Create" class="btn btn-primary">Place an order</a>
+</div>
